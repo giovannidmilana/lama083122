@@ -90,6 +90,7 @@ def main(predict_config: OmegaConf):
 
             cur_res = np.clip(cur_res * 255, 0, 255).astype('uint8')
             cur_res = cv2.cvtColor(cur_res, cv2.COLOR_RGB2BGR)
+            print(cur_out_fname)
             cv2.imwrite(cur_out_fname, cur_res)
 
     except KeyboardInterrupt:
