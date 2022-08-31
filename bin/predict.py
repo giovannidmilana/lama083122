@@ -58,7 +58,8 @@ def main(predict_config: OmegaConf):
         model = load_checkpoint(train_config, checkpoint_path, strict=False, map_location='cpu')
         model.freeze()
         if not predict_config.get('refine', False):
-            model.to(device)
+            #model.to(device)
+            pass
 
         if not predict_config.indir.endswith('/'):
             predict_config.indir += '/'
